@@ -1,0 +1,13 @@
+id: stig-rhel8-server
+name: "STIG - RHEL 8 - Server"
+vars:
+  sysctl_dropin: "/etc/sysctl.d/99-hardener.conf"
+
+rules:
+  - id: sysctl.ensure
+    params:
+      key: "net.ipv4.ip_forward"
+      value: "0"
+      runtime: true
+      persist: true
+      dropin: "{{ vars.sysctl_dropin }}"
