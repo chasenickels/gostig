@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func readFile(filename string) (osrelease map[string]string, err error) {
+func ReadFile(filename string) (osrelease map[string]string, err error) {
 	osrelease = make(map[string]string)
 	lines, err := parseFile(filename)
 	if err != nil {
